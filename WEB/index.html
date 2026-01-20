@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Upload Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="upload.js"></script>
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="matrix">
+        <div class="number-container">
+          <!-- Les chiffres seront ajoutés par le script JS -->
+        </div>
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="tile">
+        <h1>File Upload Form</h1>
+        <form id="file-upload-form" action="index.php" method="post" enctype="multipart/form-data">
+          <div>
+            <label for="file-upload">Choose a file to upload:</label>
+            <input type="file" id="file-upload" name="file-upload">
+          </div>
+          <br>
+          <input type="submit" value="Upload">
+        </form>
+        <div id="message"></div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        // Intercepter la soumission du formulaire
+        $('#file-upload-form').submit(function(event) {
+          event.preventDefault();
+
+          var file = $('#file-upload')[0].files[0];
+          if (!file) {
+            $('#message').html('Veuillez choisir un fichier.');
+            return false;
+          }
+
+          // Vérifie le type de fichier
+          if (file.name.split('.').pop() !== 'php') {
+            $('#message').html('Seuls les fichiers PHP sont autorisés.');
+            return false;
+          }
+
+          var formData = new FormData($(this)[0]);
+
+          // Envoyer le fichier via AJAX
+          $.ajax({
+            url: 'index.php',
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+              $('#message').html(response);
+            },
+            error: function(xhr, status, error) {
+              $('#message').html('Error: ' + error);
+            }
+          });
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>
