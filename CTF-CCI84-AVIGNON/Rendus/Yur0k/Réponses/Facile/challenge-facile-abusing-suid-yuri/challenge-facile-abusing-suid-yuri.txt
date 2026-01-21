@@ -1,0 +1,5 @@
+log : root
+mdp : t54Dgk!:4dZfE503e
+
+log : user
+mdp : password

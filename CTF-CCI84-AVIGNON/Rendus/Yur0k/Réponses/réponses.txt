@@ -1,0 +1,13 @@
+Introduction :
+- Reverse : NHM2I{simpl3_introduction_to_r3v3rs3}
+- OSINT : NHM2I{it_was_past3bin3d}
+- Crypto : NHM2I{fully_d3ciph3r3d}
+- Forensic : NHM2I{nic3_inv3stigation}
+
+Facile :
+- Reverse : NHM2I{this_is_a_gr3at_r3v3rs3!}
+- OSINT : NHM2I{9858580916}
+- Web : NHM2I{you_brok3_da_gam3}
+- PWN : NHM2I{2492492492492492}
+- Crypto : NHM2I{xor_is_v3ry_us3ful_in_crypto}
+- Forensic : NHM2I{DuMp3d_CAP}
