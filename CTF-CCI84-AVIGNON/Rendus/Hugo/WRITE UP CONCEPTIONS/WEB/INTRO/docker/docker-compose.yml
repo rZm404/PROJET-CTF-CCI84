@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+ php:
+  build: .
+  container_name: Miammmm
+  ports:
+   - 23026:80
+  restart: always
